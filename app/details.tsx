@@ -1,13 +1,19 @@
+import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { useRouter } from 'expo-router';
+import styles from './styles'; // Import du fichier de styles
 
-export default function DetailsScreen() {
+export default function Details() {
   const router = useRouter();
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Écran des détails</Text>
-      <Button title="Retour" onPress={() => router.back()} />
+    <View style={styles.container}>
+      <Text style={styles.text}>Détails de l'écran</Text>
+      <Button
+        title="Retour à l'accueil"
+        onPress={() => router.push('/')}
+        color="#007bff"
+      />
     </View>
   );
 }
